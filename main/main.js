@@ -1,4 +1,4 @@
-import { signOut } from '../fetch-utils.js';
+import { checkAuth, signOut } from '../fetch-utils.js';
 
 // const inputForm = document.querySelector('#input-form');
 // const currentPollSection = document.querySelector('#current-poll-section');
@@ -8,6 +8,8 @@ import { signOut } from '../fetch-utils.js';
 // const closedPollSection = document.querySelector('#closed-poll-section');
 const signOutButton = document.querySelector('#sign-out');
 console.log(signOutButton);
+
+checkAuth();
 
 signOutButton.addEventListener('click', async() =>{
     await signOut();

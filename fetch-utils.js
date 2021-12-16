@@ -38,3 +38,10 @@ export async function redirect() {
         location.replace('./main');
     }
 }
+
+export async function checkAuth() {
+    const user = await getUser();
+    if (!user) {
+        location.replace('../');
+    }
+}

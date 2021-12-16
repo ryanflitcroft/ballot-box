@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="stylesheet" href="https://use.typekit.net/bgs5xty.css">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/style.css"> -->
-    <!-- <link rel="stylesheet" href="./styles/home.css"> -->
+    <link rel="stylesheet" href="https://use.typekit.net/bgs5xty.css">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <!-- <link rel="stylesheet" href="../styles/home.css"> -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <title>Document</title>
 </head>
@@ -18,9 +18,57 @@
         <nav>
             <button id="sign-out">Sign-out</button>
         </nav>
+        <h1>Create a Poll</h1>
     </header>
     <main>
+        <section class="input-section">
+            <form id="input-form">
+                <label for="q">Question</label>
+                    <input type="text" class="" name="q">
+                <label for="a">Answer A</label>
+                    <input type="text" class="" name="a">
+                <label for="b">Answer B</label>
+                    <input type="text" class="" name="b">
+                <button type="submit" form="input-form">Submit</button>
+            </form>
+        </section>
 
+        <section id="current-poll-section">
+            <!-- Current Poll elements will be rendered in DOM -->
+            <!-- <h2>#Question#</h2>
+            <div class="">
+              <span class="">#OptionA#</span>
+              <span class="">#ResultA#</span>
+            </div>
+            <div class="">
+              <span class="">#OptionB#</span>
+              <span class="">#ResultB#</span>
+            </div> -->
+            <!-- -->
+        </section>
+
+        <section class="button-section">
+            <button class="" id="incrementA">+</button>
+            <button class="" id="close-poll-button">Close Poll</button>
+            <button class="" id="incrementB">+</button>
+        </section>
+
+        <section class="past-results-section">
+            <h2>Past Results</h2>
+            <!-- Closed Poll item elements will be stored in Supabase and rendered in DOM -->
+            <!-- <div id="closed-poll-container">
+                <h3>#Question#</h3>
+                <div class="">
+                    <span>#OptionA#</span>
+                    <span>#ResultA#</span>
+                </div>
+                <div class="">
+                    <span>#OptionB#</span>
+                    <span>#ResultB#</span>
+                </div>
+            </div> -->
+            <!-- -->
+        </section>
     </main>
     <footer>
 

@@ -248,21 +248,21 @@ git checkout -b workOnANewBranch
 * Past Results Section -
 
 ```html
-<section id="c">
-  <h2>Past Results</h2>
-  <!-- Closed Poll item elements will be stored in Supabase and rendered in DOM -->
-  <div class="">
-    <h2>#Question#</h2>
-    <div class="">
-      <span>#OptionA#</span>
-      <span>#ResultA#</span>
+<section class="past-results-section">
+    <h2>Past Results</h2>
+    <!-- Closed Poll item elements will be stored in Supabase and rendered in DOM -->
+    <div id="closed-poll-container">
+        <h3>#Question#</h3>
+        <div class="">
+            <span>#OptionA#</span>
+            <span>#ResultA#</span>
+        </div>
+        <div class="">
+            <span>#OptionB#</span>
+            <span>#ResultB#</span>
+        </div>
     </div>
-    <div class="">
-      <span>#OptionB#</span>
-      <span>#ResultB#</span>
-    </div>
-  </div>
-  <!-- -->
+    <!-- -->
 </section>
 ```
 

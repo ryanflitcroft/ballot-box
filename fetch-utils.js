@@ -4,6 +4,19 @@ const SUPABASE_URL = 'https://nlriycmmckxcuagpzbyu.supabase.co';
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+
+export async function createPoll(poll) {
+    // creates a poll for currently signed-in user in Supabase.
+    
+}
+
+export async function getPolls() {
+    // returns polls for currently signed-in user from Supabase.
+
+}
+
+// AUTH FUNCTIONS
+
 export async function signIn(email, password) {
     const response = await client.auth.signIn({
         email,

@@ -146,12 +146,12 @@ git checkout -b workOnANewBranch
 <section class="signIn-section">
   <form id="signIn-form">
     <label for="inEmail">Email
-      <input type="email" class="" id="inEmail-input" name="inEmail">
+      <input type="email" class="" name="inEmail">
     </label>
     <label for="inPassword">Password
-      <input type="password" class="" id="inPassword-input" name="inPassword">
+      <input type="password" class="" name="inPassword">
     </label>
-    <button type="submit" form="signIn-form" id="signIn-submit">Submit</button>
+    <button type="submit" form="signIn-form">Submit</button>
   </form>
 </section>
 

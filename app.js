@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { signIn, signUp } from './fetch-utils.js';
+import { redirect, signIn, signUp } from './fetch-utils.js';
 
 const signInForm = document.querySelector('#signIn-form');
 const signUpForm = document.querySelector('#signUp-form');
@@ -18,7 +18,7 @@ signInForm.addEventListener('submit', async(e) => {
     signInForm.reset();
 
     if (user) {
-      // re-direct to main.js
+        redirect();
     } else {
         console.error(user);
     }
@@ -38,7 +38,7 @@ signUpForm.addEventListener('submit', async(e) => {
     signUpForm.reset();
 
     if (user) {
-      // re-direct to main.js
+        redirect();
     } else {
         console.error(user);
     }

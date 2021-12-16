@@ -21,3 +21,20 @@ export async function signUp(email, password) {
     // console.log(response);
     return response.user;
 }
+
+export async function signOut() {
+    await client.auth.signOut();
+
+    return window.location.href = '../';
+}
+
+export async function getUser() {
+
+    return client.auth.session();
+}
+
+export async function redirect() {
+    if (await getUser()) {
+        location.replace('./main');
+    }
+}

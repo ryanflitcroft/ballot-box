@@ -8,6 +8,7 @@ const incrementBButton = document.querySelector('#incrementB');
 const closePollButton = document.querySelector('#close-poll-button');
 const closedPollContainer = document.querySelector('#closed-poll-container');
 const signOutButton = document.querySelector('#sign-out');
+const buttonSection = document.querySelector('.button-section');
 
 // console.log(signOutButton,
 //     inputForm,
@@ -42,6 +43,7 @@ inputForm.addEventListener('submit', (e) => {
     inputForm.reset();
     
     displayCurrentPollEl();
+    buttonSection.classList.add('visible');
     // bugs to fix: disable when current poll section has content
 });
 
@@ -72,6 +74,7 @@ closePollButton.addEventListener('click', async() => {
     await createPoll(poll);
     clearState();
     currentPollSection.textContent = '';
+    buttonSection.classList.remove('visible');
     displayAllPolls();
 });
 
@@ -100,7 +103,7 @@ async function displayAllPolls() {
         const closedPoll = renderPoll(poll);
         closedPollContainer.append(closedPoll);
     }
-
+    
 }
 
 function clearState() {
@@ -110,3 +113,5 @@ function clearState() {
     resultA = 0;
     resultB = 0;
 }
+
+displayAllPolls();

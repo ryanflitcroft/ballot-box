@@ -24,11 +24,11 @@
         <section class="input-section">
             <form id="input-form">
                 <label for="q">Question</label>
-                    <input type="text" class="" name="q" required>
+                    <input type="text" class="" name="q" placeholder="Ask a question" required>
                 <label for="a">Answer A</label>
-                    <input type="text" class="" name="a" required>
+                    <input type="text" class="" name="a" placeholder="Option A" required>
                 <label for="b">Answer B</label>
-                    <input type="text" class="" name="b" required>
+                    <input type="text" class="" name="b" placeholder="Option B" required>
                 <button type="submit" form="input-form">Submit</button>
             </form>
         </section>
@@ -53,10 +53,10 @@
             <button class="" id="incrementB">B</button>
         </section>
 
-        <section class="past-results-section">
-            <h2>Past Results</h2>
+        <h2>Past Results</h2>
+        <section class="closed-poll-container" id="closed-poll-container">
             <!-- Closed Poll item elements will be stored in Supabase and rendered in DOM -->
-             <div id="closed-poll-container">
+             <!-- <div id="closed-poll-container"> -->
                 <!-- <h3>#Question#</h3>
                 <div class="">
                     <span>#OptionA#</span>

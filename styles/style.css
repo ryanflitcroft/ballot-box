@@ -1,16 +1,141 @@
-
 body {
-
     --color1: #3d3d3d;
-    --color2: ;
-    --color3: ;
-    --color4: ;
-    --color5: ;
-
+    --color2: #d3d3d3;
+    --color3: #ccc;
+    --color4: #eee;
     color: var(--color1);
+    font-family: video, monospace;
+    font-weight: 400;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    justify-self: flex-end;
+    align-self: flex-end;
 }
 
 main {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0.25em;
+    letter-spacing: 0.15em;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0.5em 0;
+}
+
+.button-section {
+    display: none;
+}
+
+.button-container {
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 0 3em;
+}
+
+.visible {
+    display: contents;
+}
+
+.invisible {
+    display: none;
+}
+
+form {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 0.25em 0;
+    font-family: video, monospace;
+        box-shadow: 0.1em 0.1em 0.1em var(--color2),
+    -0.05em -0.05em 0.05em var(--color3);
+    text-align: center;
+    padding: 0.25em;
+    cursor: pointer;
+}
+
+button {
+    margin: 1em;
+    font-family: video, monospace;
+    box-shadow: 0.15em 0.15em 0.15em var(--color2),
+    -0.05em -0.05em 0.05em var(--color3);
+    cursor: pointer;
+}
+
+form button {
+    width: 100px;
+    align-self: center;
+}
+
+span {
+    margin: 0.15em;
+    display: block;
+    text-align: center;
+}
+
+.container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0.25em 0.25em 0.25em var(--color2),
+                -0.15em -0.15em 0.15em var(--color3);
+    border: solid 1px var(--color1);
+    margin: 1.5em 0;
+    padding: 1em;
+}
+
+.container:hover {
+    background: var(--color4);
+    box-shadow: 0.35em 0.35em 0.35em var(--color1),
+    -0.25em -0.25em 0.25em var(--color2);
+}
+
+@media only screen and (min-width: 500px) {
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    nav {
+        margin: 0.5em 3em 0;
+    }
+    
+    section.closed-poll-container {
+        width: 85%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .container {
+        margin: 1.5em;
+    }
 }

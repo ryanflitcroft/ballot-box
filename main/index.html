@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.typekit.net/bgs5xty.css">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <title>Ballot Box</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button id="sign-out">Sign-out</button>
+        </nav>
+        <h1>Ballot Box</h1>
+    </header>
+    <main>
+        <section class="input-section">
+            <form id="input-form">
+                <label for="q">Question</label>
+                    <input type="text" class="" name="q" placeholder="Ask 'em a question" required>
+                <label for="a">Answer A</label>
+                    <input type="text" class="" name="a" placeholder="Give 'em an option" required>
+                <label for="b">Answer B</label>
+                    <input type="text" class="" name="b" placeholder="Give 'em another" required>
+                <button type="submit" form="input-form">Create Poll</button>
+            </form>
+        </section>
+
+        <section id="current-poll-section">
+
+        </section>
+
+        <section class="button-section">
+            <h3>Cast your votes</h3>
+            <div class="button-container">
+                <button class="" id="incrementA">A</button>
+                <button class="" id="close-poll-button">Close Poll</button>
+                <button class="" id="incrementB">B</button>
+            </div>
+        </section>
+
+        <h2></h2>
+        <section class="closed-poll-container" id="closed-poll-container">
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>

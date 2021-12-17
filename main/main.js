@@ -1,4 +1,4 @@
-import { checkAuth, createPoll, signOut } from '../fetch-utils.js';
+import { checkAuth, createPoll, getPolls, signOut } from '../fetch-utils.js';
 import { renderPoll } from '../render-utils.js';
 
 const inputForm = document.querySelector('#input-form');
@@ -70,7 +70,9 @@ closePollButton.addEventListener('click', async() => {
         resultB
     };
     await createPoll(poll);
-
+    clearState();
+    currentPollSection.textContent = '';
+    displayAllPolls();
 });
 
 function displayCurrentPollEl() {
@@ -87,4 +89,24 @@ function displayCurrentPollEl() {
 
     const currentPoll = renderPoll(poll);
     currentPollSection.append(currentPoll);
+}
+
+async function displayAllPolls() {
+    // clears out and appends to polls element.
+    closedPollContainer.textContent = '';
+    const polls = await getPolls();
+
+    for (let poll of polls) {
+        const closedPoll = renderPoll(poll);
+        closedPollContainer.append(closedPoll);
+    }
+
+}
+
+function clearState() {
+    question;
+    optionA;
+    optionB;
+    resultA = 0;
+    resultB = 0;
 }

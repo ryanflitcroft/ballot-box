@@ -19,7 +19,11 @@ export async function createPoll(poll) {
 
 export async function getPolls() {
     // returns polls for currently signed-in user from Supabase.
-
+    const response = await client
+        .from('Polls')
+        .select();
+    
+    return response.data;
 }
 
 // AUTH FUNCTIONS

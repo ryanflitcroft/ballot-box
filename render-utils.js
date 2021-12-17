@@ -26,8 +26,3 @@ export function renderPoll(poll) {
 
     return pollContainerEl;
 }
-
-export function displayAllPolls() {
-    // clears out and appends to polls element.
-
-}

@@ -9,14 +9,7 @@ const closePollButton = document.querySelector('#close-poll-button');
 const closedPollContainer = document.querySelector('#closed-poll-container');
 const signOutButton = document.querySelector('#sign-out');
 const buttonSection = document.querySelector('.button-section');
-
-// console.log(signOutButton,
-//     inputForm,
-//     currentPollSection,
-//     incrementAButton,
-//     incrementBButton,
-//     closePollButton,
-//     closedPollContainer);
+const pastResultsTextEl = document.querySelector('h2');
 
 let question;
 let optionA;
@@ -28,7 +21,6 @@ checkAuth();
 
 signOutButton.addEventListener('click', async() =>{
     await signOut();
-    // console.log('signed out!');
 });
 
 inputForm.addEventListener('submit', (e) => {
@@ -44,7 +36,7 @@ inputForm.addEventListener('submit', (e) => {
     
     displayCurrentPollEl();
     buttonSection.classList.add('visible');
-    // bugs to fix: disable when current poll section has content
+    inputForm.classList.add('invisible');
 });
 
 incrementAButton.addEventListener('click', () => {
@@ -52,7 +44,6 @@ incrementAButton.addEventListener('click', () => {
         resultA++;
         displayCurrentPollEl();
     }
-
 });
 
 incrementBButton.addEventListener('click', () => {
@@ -60,7 +51,6 @@ incrementBButton.addEventListener('click', () => {
         resultB++;
         displayCurrentPollEl();
     }
-
 });
 
 closePollButton.addEventListener('click', async() => {
@@ -75,11 +65,11 @@ closePollButton.addEventListener('click', async() => {
     clearState();
     currentPollSection.textContent = '';
     buttonSection.classList.remove('visible');
+    inputForm.classList.remove('invisible');
     displayAllPolls();
 });
 
 function displayCurrentPollEl() {
-    // displays the current poll state to the current poll DOM element.
     const poll = {
         question,
         optionA,
@@ -95,7 +85,6 @@ function displayCurrentPollEl() {
 }
 
 async function displayAllPolls() {
-    // clears out and appends to polls element.
     closedPollContainer.textContent = '';
     const polls = await getPolls();
 
@@ -103,7 +92,12 @@ async function displayAllPolls() {
         const closedPoll = renderPoll(poll);
         closedPollContainer.append(closedPoll);
     }
-    
+
+    if (closedPollContainer.textContent !== '') {
+        pastResultsTextEl.textContent = 'Past Results';
+    } else {
+        pastResultsTextEl.textContent = '';
+    }
 }
 
 function clearState() {

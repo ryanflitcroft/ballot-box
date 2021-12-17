@@ -6,19 +6,17 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 
 export async function createPoll(poll) {
-    // creates a poll for currently signed-in user in Supabase.
     const newPoll = { ...poll };
     const response = await client
         .from('Polls')
         .insert(
             newPoll
         );
-    // console.log(response.data);
+        
     return response.data;
 }
 
 export async function getPolls() {
-    // returns polls for currently signed-in user from Supabase.
     const response = await client
         .from('Polls')
         .select()
@@ -27,14 +25,12 @@ export async function getPolls() {
     return response.data;
 }
 
-// AUTH FUNCTIONS
-
 export async function signIn(email, password) {
     const response = await client.auth.signIn({
         email,
         password
     });
-    // console.log(response);
+
     return response.user;
 }
 
@@ -43,7 +39,7 @@ export async function signUp(email, password) {
         email,
         password
     });
-    // console.log(response);
+
     return response.user;
 }
 

@@ -1,5 +1,4 @@
 export function renderPoll(poll) {
-    // returns DOM node.
     const pollContainerEl = document.createElement('div');
     const questionEl = document.createElement('h3');
     const containerAEl = document.createElement('div');
@@ -16,8 +15,6 @@ export function renderPoll(poll) {
     resultBEl.textContent = poll.resultB;
 
     pollContainerEl.classList.add('container');
-    // containerAEl.classList.add('container');
-    // containerBEl.classList.add('container');
 
     containerAEl.append(optionAEl, resultAEl);
     containerBEl.append(optionBEl, resultBEl);

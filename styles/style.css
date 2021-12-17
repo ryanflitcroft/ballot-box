@@ -46,14 +46,21 @@ section {
 }
 
 .button-section {
-    visibility: hidden;
+    display: none;
+}
+
+.button-container {
     flex-direction: row;
     justify-content: center;
-    margin: 0;
+    margin: 0 0 3em;
 }
 
 .visible {
-    visibility: visible;
+    display: contents;
+}
+
+.invisible {
+    display: none;
 }
 
 form {
@@ -69,6 +76,7 @@ input {
     -0.05em -0.05em 0.05em var(--color3);
     text-align: center;
     padding: 0.25em;
+    cursor: pointer;
 }
 
 button {
@@ -76,6 +84,7 @@ button {
     font-family: video, monospace;
     box-shadow: 0.15em 0.15em 0.15em var(--color2),
     -0.05em -0.05em 0.05em var(--color3);
+    cursor: pointer;
 }
 
 form button {

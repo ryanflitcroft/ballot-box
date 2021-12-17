@@ -182,13 +182,13 @@ git checkout -b workOnANewBranch
 <section class="input-section">
   <form id="input-form">
     <label for="q">Question
-      <input type="text" class="" name="q">
+      <input type="text" class="" name="q" required>
     </label>
     <label for="a">Answer A
-      <input type="text" class="" name="a">
+      <input type="text" class="" name="a" required>
     </label>
     <label for="b">Answer B
-      <input type="text" class="" name="b">
+      <input type="text" class="" name="b" required>
     </label>
     <button type="submit" form="input-form">Submit</button>
   </form>

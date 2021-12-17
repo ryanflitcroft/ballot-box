@@ -25,7 +25,9 @@ main {
     align-items: center;
 }
 
-h1 {
+h1,
+h2,
+h3 {
     margin: 0.25em;
 }
 
@@ -35,7 +37,7 @@ section {
     margin: 0.5em;
 }
 
-.button-section {
+section.button-section {
     flex-direction: row;
 }
 
@@ -50,4 +52,15 @@ input {
 
 button {
     margin: 1em;
+}
+
+span {
+    margin: 0.15em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

@@ -7,7 +7,14 @@ const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export async function createPoll(poll) {
     // creates a poll for currently signed-in user in Supabase.
-    
+    const newPoll = { ...poll };
+    const response = await client
+        .from('Polls')
+        .insert(
+            newPoll
+        );
+    // console.log(response.data);
+    return response.data;
 }
 
 export async function getPolls() {

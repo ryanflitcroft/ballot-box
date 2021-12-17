@@ -1,4 +1,4 @@
-import { checkAuth, signOut } from '../fetch-utils.js';
+import { checkAuth, createPoll, signOut } from '../fetch-utils.js';
 import { renderPoll } from '../render-utils.js';
 
 const inputForm = document.querySelector('#input-form');
@@ -31,6 +31,7 @@ signOutButton.addEventListener('click', async() =>{
 });
 
 inputForm.addEventListener('submit', (e) => {
+
     e.preventDefault();
 
     const data = new FormData(inputForm);
@@ -41,19 +42,34 @@ inputForm.addEventListener('submit', (e) => {
     inputForm.reset();
     
     displayCurrentPollEl();
+    // bugs to fix: disable when current poll section has content
 });
 
 incrementAButton.addEventListener('click', () => {
-    resultA++;
-    displayCurrentPollEl();
+    if (question) {
+        resultA++;
+        displayCurrentPollEl();
+    }
+
 });
 
 incrementBButton.addEventListener('click', () => {
-    resultB++;
-    displayCurrentPollEl();
+    if (question) {
+        resultB++;
+        displayCurrentPollEl();
+    }
+
 });
 
 closePollButton.addEventListener('click', async() => {
+    const poll = {
+        question,
+        optionA,
+        optionB,
+        resultA,
+        resultB
+    };
+    await createPoll(poll);
 
 });
 
